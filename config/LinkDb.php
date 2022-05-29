@@ -1,8 +1,6 @@
 <?php
 
-namespace dm;
-
-class  Database
+class LinkDb
 {
     public  static  function  getConnection()
     {
@@ -16,7 +14,7 @@ class  Database
         );
 
         if ($conn->connect_error) {
-            die("Erro: " . $conn->connect_error);
+            var_dump("Erro: " . $conn->connect_error);die;
         }
 
         return $conn;
