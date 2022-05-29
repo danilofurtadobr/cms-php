@@ -1,6 +1,8 @@
-namespace db/Database;
+<?php
 
-class Database
+namespace db;
+
+abstract class Database
 {
 
 }
