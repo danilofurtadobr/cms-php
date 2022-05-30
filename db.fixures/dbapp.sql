@@ -28,16 +28,16 @@ CREATE TABLE working_hours (
 
 -- Essa senha criptografada corresponde ao valor "a"
 INSERT INTO users (id, name, password, email, start_date, end_date, is_admin)
-VALUES (1, 'Admin', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'admin@root.com.br', '2000-1-1', null, 1);
+VALUES (1, 'Admin', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'admin@root.com.br', '2000-1-1', null, 1, '16128484000199');
 
-INSERT INTO users (id, name, password, email, start_date, end_date, is_admin)
-VALUES (2, 'Esin Relis', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'esin@relis.com.br', '2000-1-1', null, 1);
+INSERT INTO users (id, name, password, email, start_date, end_date, is_admin, cnpj)
+VALUES (2, 'Esin Relis', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'esin@relis.com.br', '2000-1-1', null, 1, '33562771037');
 
-INSERT INTO users (id, name, password, email, start_date, end_date, is_admin)
-VALUES (3, 'Zena Soero', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'zena@soero.com.br', '2000-1-1', null, 0);
+INSERT INTO users (id, name, password, email, start_date, end_date, is_admin, cpf)
+VALUES (3, 'Zena Soero', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'zena@soero.com.br', '2000-1-1', null, 0, '32883827095');
 
-INSERT INTO users (id, name, password, email, start_date, end_date, is_admin)
-VALUES (4, 'Ulmu Hahso', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'ulmu@hahso.com.br', '2000-1-1', null, 0);
+INSERT INTO users (id, name, password, email, start_date, end_date, is_admin, cpf)
+VALUES (4, 'Ulmu Hahso', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'ulmu@hahso.com.br', '2000-1-1', null, 0, '19515278015');
 
-INSERT INTO users (id, name, password, email, start_date, end_date, is_admin)
-VALUES (5, 'Waire Caruzi', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'waire@caruzi.com.br', '2000-1-1', '2019-1-1', 0);
+INSERT INTO users (id, name, password, email, start_date, end_date, is_admin, cpf)
+VALUES (5, 'Waire Caruzi', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'waire@caruzi.com.br', '2000-1-1', '2019-1-1', 0, '80564403059');

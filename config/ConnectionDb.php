@@ -3,6 +3,7 @@
 namespace config;
 
 use mysqli;
+use mysqli_result;
 
 class ConnectionDb
 {
@@ -24,13 +25,13 @@ class ConnectionDb
         }
     }
 
-    public function getResultFromQuery(string $sql): array
+    public function getResultFromQuery(string $sql): mysqli_result
     {
         $conn = $this->db;
 
         $result = $conn->query($sql);
         $conn->close();
 
-        return $result->fetch_assoc();
+        return $result;
     }
 }

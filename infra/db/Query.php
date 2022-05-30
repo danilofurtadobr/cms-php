@@ -96,9 +96,9 @@ class Query
         }
     }
 
-    public function execute(): array
+    public function execute()
     {
         $sql = "{$this->query};";
-        return $this->connection->getResultFromQuery($sql);
+        return $this->connection->getResultFromQuery($sql)->fetch_assoc();
     }
 }
