@@ -96,7 +96,7 @@ class Query
         }
     }
 
-    public function execute()
+    public function all(): array
     {
         $sql = "{$this->query};";
         return $this->connection->getResultFromQuery($sql)->fetch_all(MYSQLI_ASSOC);

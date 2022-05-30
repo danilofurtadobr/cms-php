@@ -16,4 +16,4 @@ $query->where([
 ]);
 
 echo '<pre>';
-var_dump($query->execute());die;
+var_dump($query->all());die;
