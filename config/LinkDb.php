@@ -2,7 +2,7 @@
 
 class LinkDb
 {
-    public  static  function  getConnection()
+    public static function getConnection()
     {
         $envPath = realpath(dirname(__FILE__) . '/../env.ini');
         $env = parse_ini_file($envPath);
@@ -20,7 +20,7 @@ class LinkDb
         return $conn;
     }
 
-    public  static  function  getResultFromQuery(string $sql)
+    public static function getResultFromQuery(string $sql)
     {
         $conn = self::getConnection();
         $result = $conn->query($sql);
