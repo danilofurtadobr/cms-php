@@ -99,6 +99,6 @@ class Query
     public function execute()
     {
         $sql = "{$this->query};";
-        return $this->connection->getResultFromQuery($sql)->fetch_assoc();
+        return $this->connection->getResultFromQuery($sql)->fetch_all(MYSQLI_ASSOC);
     }
 }

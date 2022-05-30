@@ -3,7 +3,6 @@
 namespace config;
 
 use mysqli;
-use mysqli_result;
 
 class ConnectionDb
 {
@@ -25,7 +24,7 @@ class ConnectionDb
         }
     }
 
-    public function getResultFromQuery(string $sql): mysqli_result
+    public function getResultFromQuery(string $sql)
     {
         $conn = $this->db;
 
