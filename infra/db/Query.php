@@ -98,7 +98,18 @@ class Query
 
     public function all(): array
     {
-        $sql = "{$this->query};";
-        return $this->connection->getResultFromQuery($sql)->fetch_all(MYSQLI_ASSOC);
+        $this->finalizeQuery();
+        return $this->connection->getResultFromQuery($this->query)->fetch_all(MYSQLI_ASSOC);
+    }
+
+    private function finalizeQuery(): void
+    {
+        $this->query = "{$this->query};";
+    }
+
+    public function one(): array
+    {
+        $this->finalizeQuery();
+        return $this->connection->getResultFromQuery($this->query)->fetch_assoc();
     }
 }

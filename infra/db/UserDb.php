@@ -2,6 +2,7 @@
 
 namespace db;
 
+use src\user\UserInterface;
 use src\user\UserRepositoryInterface;
 
 class UserDb implements UserRepositoryInterface
@@ -10,6 +11,23 @@ class UserDb implements UserRepositoryInterface
 
     public function __construct()
     {
-        $query = new Query();
+        $this->query = (new Query());
+    }
+
+    public function load(UserInterface $user): bool
+    {
+        $records = $this->query
+            ->select(['name'])
+            ->from('users')
+            ->where(['id' => $user->getId()])
+            ->one()
+        ;
+
+        if (!$records) {
+            return false;
+        }
+
+        $user->setName($records['name']);
+        return true;
     }
 }
