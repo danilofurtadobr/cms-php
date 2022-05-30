@@ -4,7 +4,7 @@ use db\Query;
 
 require_once(dirname(__FILE__, 2) . '/config/settings.php');
 
-// LinkDb::getConnection();
+// Connection::getConnection();
 
 $query = new Query();
 $query->select(['name', 'is_admin', 'email']);

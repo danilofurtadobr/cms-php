@@ -4,10 +4,10 @@ DROP TABLE IF EXISTS working_hours, users;
 CREATE TABLE users (
     id INT(6) AUTO_INCREMENT PRIMARY KEY, 
     name VARCHAR(100) NOT NULL,
-    password VARCHAR(100) NOT NULL,
     cpf VARCHAR(11),
     cnpj VARCHAR(14),
     email VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL,
     start_date DATE NOT NULL,
     end_date DATE,
     is_admin BOOLEAN NOT NULL DEFAULT false

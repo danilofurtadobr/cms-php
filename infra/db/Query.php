@@ -2,6 +2,8 @@
 
 namespace db;
 
+use config\ConnectionDb;
+
 class Query
 {
     private const QUERY_BUILD_FROM = 'FROM';
@@ -9,6 +11,12 @@ class Query
     private const QUERY_BUILD_WHERE = 'WHERE';
 
     private $query;
+    private $connection;
+
+    public function __construct()
+    {
+        $this->connection = new ConnectionDb();
+    }
 
     private function hasQuery(): bool
     {
@@ -88,8 +96,9 @@ class Query
         }
     }
 
-    public function execute(): string
+    public function execute(): array
     {
-        return $this->query . ';';
+        $sql = "{$this->query};";
+        return $this->connection->getResultFromQuery($sql);
     }
 }
