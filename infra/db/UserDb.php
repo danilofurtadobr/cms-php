@@ -2,32 +2,27 @@
 
 namespace db;
 
+use framework\db\Query;
+
 use src\user\UserInterface;
 use src\user\UserRepositoryInterface;
 
 class UserDb implements UserRepositoryInterface
 {
-    private $query;
-
-    public function __construct()
+    public function load(UserInterface $user): UserInterface
     {
-        $this->query = (new Query());
-    }
-
-    public function load(UserInterface $user): bool
-    {
-        $records = $this->query
+        $record = (new Query())
             ->select(['name'])
             ->from('users')
             ->where(['id' => $user->getId()])
             ->one()
         ;
 
-        if (!$records) {
-            return false;
+        if (!$record) {
+            throw new \Exception("The user '{{$user->getId()}}' not found.");
         }
 
-        $user->setName($records['name']);
-        return true;
+        $user->setName($record['name']);
+        return $user;
     }
 }

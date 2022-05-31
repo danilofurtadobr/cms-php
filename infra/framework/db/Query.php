@@ -1,10 +1,10 @@
 <?php
 
-namespace db;
+namespace framework\db;
 
 use config\ConnectionDb;
 
-class Query
+class Query implements QueryInterface
 {
     private const QUERY_BUILD_FROM = 'FROM';
     private const QUERY_BUILD_SELECT = 'SELECT';
@@ -23,7 +23,7 @@ class Query
         return $this->query ? true : false;
     }
 
-    public function select(array $columns): void
+    public function select(array $columns): Query
     {
         foreach($columns as $column) {
             if (!$this->hasQuery()) {
@@ -32,6 +32,8 @@ class Query
                 $this->addColumnInSelect($column);
             }
         }
+
+        return $this;
     }
 
     private function addColumnInSelect(string $column): void
@@ -45,12 +47,14 @@ class Query
         $this->query = "{$select} {$column}";
     }
 
-    public function from(string $table): void
+    public function from(string $table): Query
     {
         $this->checkStartedQuery();
 
         $from = self::QUERY_BUILD_FROM;
         $this->query = "{$this->query} {$from} {$table}";
+
+        return $this;
     }
 
     private function checkStartedQuery(): void
@@ -60,7 +64,7 @@ class Query
         }
     }
 
-    public function where(array $params): void
+    public function where(array $params): Query
     {
         $this->checkQueryProgress(self::QUERY_BUILD_FROM);
 
@@ -71,6 +75,8 @@ class Query
                 $this->addFilterInWhere($param, $filter);
             }
         }
+
+        return $this;
     }
 
     private function addFilterInWhere(string $param, string $filter): void
