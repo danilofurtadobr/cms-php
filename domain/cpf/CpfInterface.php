@@ -1,6 +1,6 @@
 <?php
 
-namespace src\cpf;
+namespace domain\cpf;
 
 interface CpfInterface
 {

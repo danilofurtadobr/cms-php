@@ -2,7 +2,7 @@
 
 namespace dm;
 
-use src\user\UserRepositoryInterface;
+use domain\user\UserRepositoryInterface;
 
 class UserDm implements UserRepositoryInterface
 {

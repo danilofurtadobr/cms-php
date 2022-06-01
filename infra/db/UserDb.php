@@ -4,8 +4,8 @@ namespace db;
 
 use framework\db\Query;
 
-use src\user\UserInterface;
-use src\user\UserRepositoryInterface;
+use domain\user\UserInterface;
+use domain\user\UserRepositoryInterface;
 
 class UserDb implements UserRepositoryInterface
 {

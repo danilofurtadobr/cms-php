@@ -1,6 +1,6 @@
 <?php
 
-namespace src\user;
+namespace domain\user;
 
 class User implements UserInterface
 {
