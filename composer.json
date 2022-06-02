@@ -1,4 +1,18 @@
 {
+    "name": "danilofurtado/scc",
+    "description": "system point control / to check",
+    "autoload": {
+        "psr-4": {
+            "Danilofurtado\\Scc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Danilo Furtado",
+            "email": "65987423+danilofurtadobr@users.noreply.github.com"
+        }
+    ],
+    "require": {},
     "require-dev": {
         "phpunit/phpunit": "^9"
     }
