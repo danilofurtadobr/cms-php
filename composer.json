@@ -11,7 +11,7 @@
         "files": [
             "src/config/settings.php",
             "src/config/router.php",
-            "src/core/controller.php"
+            "src/config/controller.php"
         ],
         "psr-4": {
             "src\\": "src/"
