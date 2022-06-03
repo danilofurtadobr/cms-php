@@ -10,7 +10,8 @@
     "autoload": {
         "files": [
             "src/config/settings.php",
-            "src/config/router.php"
+            "src/config/router.php",
+            "src/core/controller.php"
         ],
         "psr-4": {
             "src\\": "src/"

@@ -11,12 +11,20 @@ function router() {
 
     $matchedUri = exactMatchUriInRoutes($uri, $routes);
 
+    $params = [];
     if (empty($matchedUri)) {
         $matchedUri = regularExpressionMatchInRoutes($uri, $routes);
         $uri = explode('/', ltrim($uri, '/'));
         $params = params($uri, $matchedUri);
         $params = paramsFormat($uri, $params);
     }
+
+    if (!empty($matchedUri)) {
+        controller($matchedUri, $params);
+        return;
+    }
+
+    throw new Exception('No route matched.');
 }
 
 function paramsFormat($uri, $params) {
