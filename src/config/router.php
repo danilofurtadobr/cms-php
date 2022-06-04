@@ -66,4 +66,4 @@ function exactMatchUriInRoutes($uri, $routes) {
     return [];
 }
 
-throw new Exception('Help, something is very wrong');
+throw new Exception('Help, something went very wrong with the router.');
