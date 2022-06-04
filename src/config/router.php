@@ -8,12 +8,13 @@ function router() {
     $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
     $routes = routes();
+    $requestMethod = $_SERVER['REQUEST_METHOD'];
 
-    $matchedUri = exactMatchUriInRoutes($uri, $routes);
+    $matchedUri = exactMatchUriInRoutes($uri, $routes[$requestMethod]);
 
     $params = [];
     if (empty($matchedUri)) {
-        $matchedUri = regularExpressionMatchInRoutes($uri, $routes);
+        $matchedUri = regularExpressionMatchInRoutes($uri, $routes[$requestMethod]);
         $uri = explode('/', ltrim($uri, '/'));
         $params = params($uri, $matchedUri);
         $params = paramsFormat($uri, $params);
@@ -65,5 +66,3 @@ function exactMatchUriInRoutes($uri, $routes) {
 
     return [];
 }
-
-throw new Exception('Help, something went very wrong with the router.');
