@@ -11,7 +11,7 @@ function controller($matchedUri, $params) {
     $controllerInstance = new $controllerWithNamespace();
 
     if (!method_exists($controllerInstance, $method)) {
-        throw new Exception("Method '{$method}' not found in controller '{$controller}'. ");
+        throw new Exception("Method '{$method}' not found in controller '{$controller}'.");
     }
 
     return $controllerInstance->$method($params);
