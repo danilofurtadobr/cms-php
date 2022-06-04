@@ -6,6 +6,9 @@ class HomeController
 {
     public function index()
     {
-        var_dump('This is the index method of HomeController');die;
+        return [
+            'view' => 'login',
+            'data' => ['name' => 'Danilo']
+        ];
     }
 }
