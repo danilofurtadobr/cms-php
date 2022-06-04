@@ -6,6 +6,10 @@ require 'bootstrap.php';
 try{
     $data = router();
 
+    if (!isset($data['data'])) {
+        throw new Exception("Data array key does not exist.");
+    }
+
     extract($data['data']);
     $view = $data['view'] . '.php';
 
