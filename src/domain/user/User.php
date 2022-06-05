@@ -2,8 +2,12 @@
 
 namespace domain\user;
 
+use app\domain\UuidTrait;
+
 class User implements UserInterface
 {
+    use UuidTrait;
+
     private $repository;
 
     private $id;
