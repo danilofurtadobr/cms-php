@@ -1,8 +1,8 @@
 <?php
 
-namespace framework\db;
+namespace src\infra\framework\db;
 
-use config\ConnectionDb;
+use src\config\ConnectionDb;
 
 class Query implements QueryInterface
 {
@@ -102,7 +102,7 @@ class Query implements QueryInterface
         }
     }
 
-    public function all(): array
+    public function all(): ?array
     {
         $this->finalizeQuery();
         return $this->connection->getResultFromQuery($this->query)->fetch_all(MYSQLI_ASSOC);
@@ -113,7 +113,7 @@ class Query implements QueryInterface
         $this->query = "{$this->query};";
     }
 
-    public function one(): array
+    public function one(): ?array
     {
         $this->finalizeQuery();
         return $this->connection->getResultFromQuery($this->query)->fetch_assoc();

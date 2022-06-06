@@ -1,6 +1,6 @@
 <?php
 
-namespace config;
+namespace src\config;
 
 use mysqli;
 
@@ -10,7 +10,8 @@ class ConnectionDb
 
     public function __construct()
     {
-        $envPath = realpath(dirname(__FILE__) . '/../env.ini');
+        $envPath = realpath(ROOT . '/env.ini');
+
         $env = parse_ini_file($envPath);
         $this->db = new mysqli(
             $env['host'],

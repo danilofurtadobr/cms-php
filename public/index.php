@@ -6,11 +6,15 @@ require 'bootstrap.php';
 try{
     $data = router();
 
-    if (!isset($data['data'])) {
-        throw new Exception("Data array key does not exist.");
+    //TODO: Descomentar quando tiver certeza que não precisa dessa validação
+    // if (!isset($data['data'])) {
+    //     throw new Exception("Data array key does not exist.");
+    // }
+
+    if (isset($data['data'])) {
+        extract($data['data']);
     }
 
-    extract($data['data']);
     $view = $data['view'] . '.php';
 
     if (!isset($view)) {

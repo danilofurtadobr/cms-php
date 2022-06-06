@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="assets/css/login.css">
     <title>SCC</title>
 </head>
-<body>
-    <form class="form-login" action="#" method="post">
+<body> -->
+
+    <form class="form-login" action="/login" method="post">
         <div class="login-card card">
             <div class="card-header">
                 <i class="icofont-molecule mr-2"></i>
@@ -20,9 +21,10 @@
                 <i class="icofont-network ml-2"></i>
             </div>
             <div class="card-body">
+                <?php echo getFlash('message') ?>
                 <div class="form-group">
-                    <label for="document">Login</label>
-                    <input type="document" id="document" name="document"
+                    <label for="user">Login</label>
+                    <input type="user" id="user" name="user"
                         class="form-control"
                         placeholder="Informe o CPF ou CNPJ" autofocus>
                 </div>
@@ -38,5 +40,6 @@
             </div>
         </div>
     </form>
+<!-- 
 </body>
-</html>
+</html> -->

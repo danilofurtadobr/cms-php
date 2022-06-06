@@ -1,6 +1,6 @@
 <?php
 
-namespace app\domain;
+namespace src\domain\utilities;
 
 use Ramsey\Uuid\Uuid;
 
@@ -15,7 +15,7 @@ trait UuidTrait
     public function setId(string $id)
     {
         if (!preg_match('/[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}/', $id)) {
-            throw new Exception("The id '$id' is not an uuid");
+            throw new \Exception("The id '$id' is not an uuid");
         }
 
         $this->id = $id;

@@ -1,28 +1,33 @@
 <?php
 
-namespace db;
+namespace src\infra\db;
 
-use framework\db\Query;
+use src\infra\framework\db\Query;
 
-use domain\user\UserInterface;
-use domain\user\UserRepositoryInterface;
+use src\domain\user\UserInterface;
+use src\domain\user\UserRepositoryInterface;
 
 class UserDb implements UserRepositoryInterface
 {
-    public function load(UserInterface $user): UserInterface
+    public function findByCpf(UserInterface $user): bool
     {
         $record = (new Query())
-            ->select(['name'])
+            ->select(['id', 'name', 'password'])
             ->from('users')
-            ->where(['id' => $user->getId()])
+            ->where(['cpf' => $user->getCpf()->getNumber()])
             ->one()
         ;
 
         if (!$record) {
-            throw new \Exception("The user '{{$user->getId()}}' not found.");
+            return false;
         }
 
-        $user->setName($record['name']);
-        return $user;
+        $user
+            ->setId($record['id'])
+            ->setName($record['name'])
+            ->setPassword($record['cpf'])
+        ;
+
+        return true;
     }
 }

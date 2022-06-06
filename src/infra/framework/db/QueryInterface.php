@@ -1,6 +1,6 @@
 <?php
 
-namespace framework\db;
+namespace src\infra\framework\db;
 
 interface QueryInterface
 {

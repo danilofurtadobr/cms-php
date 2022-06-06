@@ -11,7 +11,11 @@
         "files": [
             "src/config/settings.php",
             "src/config/router.php",
-            "src/config/controller.php"
+            "src/config/controller.php",
+            "src/config/ConnectionDb.php",
+            "src/helpers/flash.php",
+            "src/helpers/redirect.php",
+            "src/helpers/sessions.php"
         ],
         "psr-4": {
             "src\\": "src/"

@@ -1,8 +1,8 @@
 <?php
 
-namespace domain\user;
+namespace src\domain\user;
 
 interface UserRepositoryInterface
 {
-    public function load(UserInterface $user): UserInterface;
+    public function findByCpf(UserInterface $user): bool;
 }

@@ -2,7 +2,7 @@ USE scc_db;
 
 DROP TABLE IF EXISTS working_hours, users;
 CREATE TABLE users (
-    id INT(6) AUTO_INCREMENT PRIMARY KEY, 
+    id VARCHAR(36),
     name VARCHAR(100) NOT NULL,
     cpf VARCHAR(11),
     cnpj VARCHAR(14),
@@ -13,8 +13,8 @@ CREATE TABLE users (
     is_admin BOOLEAN NOT NULL DEFAULT false
 );
 CREATE TABLE working_hours (
-    id INT(6) AUTO_INCREMENT PRIMARY KEY, 
-    user_id INT(6),
+    id VARCHAR(36),
+    user_id VARCHAR(36),
     work_date DATE NOT NULL,
     time1 TIME,
     time2 TIME,
@@ -27,11 +27,11 @@ CREATE TABLE working_hours (
 );
 
 -- Essa senha criptografada corresponde ao valor "a"
-INSERT INTO users (id, name, password, email, start_date, end_date, is_admin)
+INSERT INTO users (id, name, password, email, start_date, end_date, is_admin, cnpj)
 VALUES ('e8d43e39-b97b-4645-94b2-44431c91ca59', 'Admin', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'admin@root.com.br', '2000-1-1', null, 1, '16128484000199');
 
 INSERT INTO users (id, name, password, email, start_date, end_date, is_admin, cnpj)
-VALUES ('ef4a82d5-5f43-41dc-bf92-bfac0a9dab4f', 'Esin Relis', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'esin@relis.com.br', '2000-1-1', null, 1, '33562771037');
+VALUES ('ef4a82d5-5f43-41dc-bf92-bfac0a9dab4f', 'Esin Relis LTDA', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'esin@relis.com.br', '2000-1-1', null, 1, '68397232000169');
 
 INSERT INTO users (id, name, password, email, start_date, end_date, is_admin, cpf)
 VALUES ('323eef3d-3e1f-40e2-b3a3-426c0c8b712d', 'Zena Soero', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'zena@soero.com.br', '2000-1-1', null, 0, '32883827095');

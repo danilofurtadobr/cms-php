@@ -1,6 +1,6 @@
 <?php
 
-namespace domain\cnpj;
+namespace src\domain\cnpj;
 
 interface CnpjInterface
 {

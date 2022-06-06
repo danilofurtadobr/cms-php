@@ -14,5 +14,11 @@ function controller($matchedUri, $params) {
         throw new Exception("Method '{$method}' not found in controller '{$controller}'.");
     }
 
-    return $controllerInstance->$method($params);
+    $controller = $controllerInstance->$method($params);
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        die();
+    }
+
+    return $controller;
 }
