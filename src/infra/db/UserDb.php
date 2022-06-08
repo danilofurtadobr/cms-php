@@ -25,7 +25,7 @@ class UserDb implements UserRepositoryInterface
         $user
             ->setId($record['id'])
             ->setName($record['name'])
-            ->setPassword($record['cpf'])
+            ->setPassword($record['password'])
         ;
 
         return true;

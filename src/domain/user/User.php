@@ -65,7 +65,7 @@ class User implements UserInterface
 
     public function checkPassword(string $password): void
     {
-        if (password_verify($password, $this->password)) {
+        if (!password_verify($password, $this->password)) {
             throw new UserException("Incorrect password", ErrorCodes::USER_PASSWORD_OR_LOGIN_INCORRECT);
         }
     }
