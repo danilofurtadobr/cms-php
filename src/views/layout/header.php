@@ -24,9 +24,7 @@
         <div class="spacer"></div>
         <div class="dropdown">
             <div class="dropdown-button">
-                <img class="avatar" 
-                    src="<?= "http://www.gravatar.com/avatar.php?gravatar_id="
-                    . md5(strtolower(trim($_SESSION['user']->email))) ?>" alt="user">
+
                 <span class="ml-3">
                     <?= $_SESSION['user']->name ?>
                 </span>
@@ -35,7 +33,7 @@
             <div class="dropdown-content">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="logout.php">
+                        <a href="/logout">
                             <i class="icofont-logout mr-2"></i>
                             Sair
                         </a>
@@ -44,3 +42,4 @@
             </div>
         </div>
     </header>
+    <?php require VIEW_PATH . 'layout/left.php'?>

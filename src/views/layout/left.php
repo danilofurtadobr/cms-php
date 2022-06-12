@@ -29,7 +29,7 @@
     </nav>
     <div class="sidebar-widgets">
         <div class="sidebar-widget">
-            <i class="icon icofont-hour-glass text-primary"></i>
+            <!-- <i class="icon icofont-hour-glass text-primary"></i> -->
             <div class="info">
                 <span class="main text-primary"
                     <?= $activeClock === 'workedInterval' ? 'active-clock' : '' ?>>
@@ -40,7 +40,7 @@
         </div>
         <div class="division my-3"></div>
         <div class="sidebar-widget">
-            <i class="icon icofont-ui-alarm text-danger"></i>
+            <!-- <i class="icon icofont-ui-alarm text-danger"></i> -->
             <div class="info">
                 <span class="main text-danger"
                     <?= $activeClock === 'exitTime' ? 'active-clock' : '' ?>>

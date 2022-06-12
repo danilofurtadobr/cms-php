@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/login.css">
     <title>SCC</title>
 </head>
-<body> -->
+<body>
 
     <form class="form-login" action="/login" method="post">
         <div class="login-card card">
@@ -40,6 +40,6 @@
             </div>
         </div>
     </form>
-<!-- 
+
 </body>
-</html> -->
+</html>

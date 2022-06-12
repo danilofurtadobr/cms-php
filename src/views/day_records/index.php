@@ -1,14 +1,6 @@
-<main class="content">
+<?php require VIEW_PATH . 'layout/header.php'?>
 
-    <?php
-    // var_dump('passou');die;
-    //     renderTitle(
-    //         'Registrar Ponto',
-    //         'Mantenha seu ponto consistente!',
-    //         'icofont-check-alt'
-    //     );
-    //     include(TEMPLATE_PATH . "/messages.php");
-    ?>
+<main class="content">
     <div class="card">
         <div class="card-header">
             <h3>HOJE</h3>
@@ -43,3 +35,5 @@
     </form>
 
 </main>
+
+<?php require VIEW_PATH . 'layout/footer.php'?>

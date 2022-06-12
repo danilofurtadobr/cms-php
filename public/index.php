@@ -25,7 +25,7 @@ try{
         throw new Exception("View '{$data['view']}' not found.");
     }
 
-    require  VIEW_PATH . 'layout.php';
+    require  VIEW_PATH . 'main.php';
 }catch(Exception $e){
     var_dump($e->getMessage());
 }

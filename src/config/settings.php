@@ -11,3 +11,7 @@ define('ROOT', dirname(__FILE__, 3));
 define('VIEW_PATH', ROOT . '/src/views/');
 define('CONTROLLER_PATH', "src\\controllers\\");
 define('LOGGED', 'LOGGED');
+
+function renderTitle($title, $subtitle, $icon = null) {
+    require_once(VIEW_PATH . "layout/title.php");
+}
