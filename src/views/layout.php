@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="assets/css/login.css">
     <title>SCC</title>
 </head>
-<body>
+<body> -->
+    <?php require VIEW_PATH . 'layout/header.php'?>
+    <?php require VIEW_PATH . 'layout/left.php'?>
     <?php require VIEW_PATH . $view;?>
-</body>
-</html>
+    <?php require VIEW_PATH . 'layout/footer.php'?>
+<!-- </body>
+</html> -->
