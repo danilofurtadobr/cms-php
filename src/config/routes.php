@@ -2,7 +2,7 @@
 
 return [
     'GET' => [
-        '/' => 'HomeController@login',
+        '/' => 'DayRecordsController@index',
         '/login' => 'HomeController@login',
         '/logout' => 'AuthController@logout',
         '/user/create' => 'UserController@create',

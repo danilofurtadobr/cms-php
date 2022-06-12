@@ -6,7 +6,7 @@ require 'bootstrap.php';
 try{
     $data = router();
 
-    //TODO: Descomentar quando tiver certeza que não precisa dessa validação
+    //TODO: Certificar que não precisa dessa validação
     // if (!isset($data['data'])) {
     //     throw new Exception("Data array key does not exist.");
     // }

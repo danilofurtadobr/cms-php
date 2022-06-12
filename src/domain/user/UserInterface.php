@@ -13,5 +13,5 @@ interface UserInterface
     public function getCpf(): CpfInterface;
     public function setCpf(CpfInterface $cpf): UserInterface;
     public function setPassword(?string $password): UserInterface;
-    public function checkPassword(string $password): void;
+    public function checkPassword(string $password): User;
 }
