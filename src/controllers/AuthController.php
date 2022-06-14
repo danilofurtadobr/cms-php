@@ -13,6 +13,7 @@ class AuthController
     public function login()
     {
         try {
+            var_dump('chegou no metodo login');die;
             $cpfNumber = filter_input(INPUT_POST, 'user');
             $password = filter_input(INPUT_POST, 'password');
 

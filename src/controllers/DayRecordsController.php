@@ -10,7 +10,7 @@ class DayRecordsController
     public function index($params)
     {
         try {
-            $user = requireUserBySession();
+            // $user = requireUserBySession();
             return [
                 'view' => 'day_records/index',
                 'data' => ['name' => 'Danilo']
