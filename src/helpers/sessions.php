@@ -11,7 +11,6 @@ function logged() {
 }
 
 function requireUserBySession() {
-    var_dump('passou');die;
     $session = $_SESSION[LOGGED];
     validateSession($session);
     return $session;
