@@ -14,6 +14,7 @@ class HomeController
 
     public function login()
     {
+        var_dump('view login no homecontroller');die;
         return ['view' => 'login'];
     }
 }
