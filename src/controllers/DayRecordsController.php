@@ -14,7 +14,8 @@ class DayRecordsController
             return [
                 'view' => 'day_records/index',
                 'data' => ['name' => 'Danilo']
-            ];        } catch(UserException $e) {
+            ];        
+        } catch(UserException $e) {
             $message = ErrorCodes::translate($e);
 
             setExceptionMessageAndRedirect('message', $message, '/');
