@@ -10,7 +10,6 @@ class DayRecordsController
     public function index($params)
     {
         try {
-            var_dump('passou');die;
             $user = requireUserBySession();
             return [
                 'view' => 'day_records/index',
