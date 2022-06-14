@@ -10,7 +10,6 @@ class DayRecordsController
     public function index($params)
     {
         try {
-            var_dump('chegou no day records index');die;
             $user = requireUserBySession();
             return [
                 'view' => 'day_records/index',
