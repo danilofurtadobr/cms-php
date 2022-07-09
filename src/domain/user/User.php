@@ -40,7 +40,7 @@ class User implements UserInterface
     public function loadByCpf(): User
     {
         if (!$this->repository->findByCpf($this)) {
-            throw new UserException("CPF '{{$this->cpf->getNumber()}}' not found.", ErrorCodes::USER_PASSWORD_OR_LOGIN_INCORRECT);
+            throw new UserException("CPF '{$this->cpf->getNumber()}' not found.", ErrorCodes::USER_PASSWORD_OR_LOGIN_INCORRECT);
         }
 
         return $this;
