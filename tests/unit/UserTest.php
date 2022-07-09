@@ -1,5 +1,5 @@
 <?php
-// Inclusão do framework PHPUnit
+
 use PHPUnit\Framework\TestCase;
 use src\domain\cpf\Cpf;
 use src\domain\cpf\FakeCpf;

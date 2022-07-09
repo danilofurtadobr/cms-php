@@ -17,7 +17,6 @@ class Cpf implements CpfInterface
 
     public function validate(): void
     {
-        $this->checkLength();
         $this->checkOnlyNumbers();
         $this->checkSameNumbers();
         $this->checkVerificationDigits();
@@ -33,7 +32,7 @@ class Cpf implements CpfInterface
             $digit = ((10 * $digit) % 11) % 10;
 
             if ($this->cpf[$number] != $digit) {
-                throw new UserException("CPF '{$this->cpf}' is invalid.", ErrorCodes::USER_CPF_INVALID);
+                throw new UserException("The digits of the CPF '{$this->cpf}' is invalid.", ErrorCodes::USER_CPF_INVALID);
             }
         }
     }
@@ -46,7 +45,7 @@ class Cpf implements CpfInterface
             }
 
             if ($position == 10) {
-                throw new UserException("CPF '{$this->cpf}' is invalid.", ErrorCodes::USER_CPF_INVALID);
+                throw new UserException("All characters of CPF '{$this->cpf}' are the same.", ErrorCodes::USER_CPF_INVALID);
             }
         }
     }
@@ -54,7 +53,7 @@ class Cpf implements CpfInterface
     private function checkOnlyNumbers()
     {
         if (!$this->hasOnlyNumbers()) {
-            throw new UserException("CPF '{$this->cpf}' is invalid.", ErrorCodes::USER_CPF_INVALID);
+            throw new UserException("Number of characters in CPF '{$this->cpf}' is invalid.", ErrorCodes::USER_CPF_INVALID);
         }
     }
 
@@ -63,17 +62,18 @@ class Cpf implements CpfInterface
         return preg_match('/\d{11}/', $this->cpf);
     }
 
-    private function checkLength()
-    {
-        if(!$this->isCorrectLength()){
-            throw new UserException("CPF '{$this->cpf}' is invalid.", ErrorCodes::USER_CPF_INVALID);
-        }
-    }
+    // TODO: Descomentar quando for implemetar factory de documento entre CPF e CNPJ
+    // public function checkLength()
+    // {
+    //     if(!$this->isCorrectLength()){
+    //         throw new UserException("Number of characters in CPF '{$this->cpf}' is invalid.", ErrorCodes::USER_CPF_INVALID);
+    //     }
+    // }
 
-    private function isCorrectLength()
-    {
-        return mb_strlen($this->cpf) === self::CPF_LENGTH;
-    }
+    // private function isCorrectLength()
+    // {
+    //     return mb_strlen($this->cpf) === self::CPF_LENGTH;
+    // }
 
     public function getNumber(): string
     {
