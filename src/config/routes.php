@@ -12,5 +12,6 @@ return [
     ],
     'POST' => [
         '/login' => 'AuthController@login',
+        '/api/login' => 'AuthController@apiLogin',
     ],
 ];

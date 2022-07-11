@@ -9,7 +9,7 @@ class CpfTest extends TestCase
     {
         $cpf = (new Cpf('1628334509'));
 
-        $this->expectException(Exception::class);
+        $this->expectException(Exception::class);                                                       
         $this->expectExceptionCode(4001);
         $this->expectExceptionMessage("Number of characters in CPF '1628334509' is invalid.");
 

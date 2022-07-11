@@ -52,4 +52,18 @@ class AuthController
             setExceptionMessageAndRedirect('message', ErrorCodes::ERROR_500, '/login');
         }
     }
+
+    public function apiLogin()
+    {
+        try {
+            var_dump( $_SERVER['HTTP_USER_AGENT']);
+            echo ['teste' => '1'];
+        } catch(UserException $e) {
+            $message = ErrorCodes::translate($e);
+
+            setExceptionMessageAndRedirect('message', $message, '/');
+        } catch(\Exception $e) {
+            setExceptionMessageAndRedirect('message', ErrorCodes::ERROR_500, '/');
+        }
+    }
 }
