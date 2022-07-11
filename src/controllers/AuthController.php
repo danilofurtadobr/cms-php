@@ -8,13 +8,13 @@ use src\domain\utilities\ErrorCodes;
 use src\domain\cpf\Cpf;
 use src\infra\exception\UserException;
 
-class AuthController
+class AuthController extends Controller
 {
     public function login()
     {
         try {
-            $cpfNumber = filter_input(INPUT_POST, 'user');
-            $password = filter_input(INPUT_POST, 'password');
+            $cpfNumber = $this->getPost('user');
+            $password = $this->getPost('password');
 
             $cpf = new Cpf(number: $cpfNumber);
             $cpf->validate();
@@ -66,23 +66,4 @@ class AuthController
             setExceptionMessageAndRedirect('message', ErrorCodes::ERROR_500, '/');
         }
     } 
-
-    private function getClientIp() {
-    $ipaddress = '';
-    if (isset($_SERVER['HTTP_CLIENT_IP']))
-        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
-    else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
-        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    else if(isset($_SERVER['HTTP_X_FORWARDED']))
-        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
-    else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
-        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
-    else if(isset($_SERVER['HTTP_FORWARDED']))
-        $ipaddress = $_SERVER['HTTP_FORWARDED'];
-    else if(isset($_SERVER['REMOTE_ADDR']))
-        $ipaddress = $_SERVER['REMOTE_ADDR'];
-    else
-        $ipaddress = 'UNKNOWN';
-    return $ipaddress;
-}
 }
