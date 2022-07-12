@@ -11,9 +11,7 @@ class UserDb implements UserRepositoryInterface
 {
     public function findByCpf(UserInterface $user): bool
     {
-        $record = (new Query())
-            ->select(['id', 'name', 'password'])
-            ->from('users')
+        $record = ($this->build())
             ->where(['cpf' => $user->getCpf()->getNumber()])
             ->one()
         ;
@@ -29,5 +27,33 @@ class UserDb implements UserRepositoryInterface
         ;
 
         return true;
+    }
+
+    public function findByEmail(UserInterface $user): bool
+    {
+        $record = ($this->build())
+            ->where(['email' => $user->getEmail()])
+            ->one()
+        ;
+
+        if (!$record) {
+            return false;
+        }
+
+        $user
+            ->setId($record['id'])
+            ->setName($record['name'])
+            ->setPassword($record['password'])
+        ;
+
+        return true;
+    }
+
+    private function build(): Query
+    {
+        return (new Query())
+            ->select(['id', 'name', 'password'])
+            ->from('users')
+        ;
     }
 }

@@ -6,6 +6,7 @@ use src\infra\db\UserDb;
 use src\domain\user\User;
 use src\domain\utilities\ErrorCodes;
 use src\domain\cpf\Cpf;
+use src\domain\email\Email;
 use src\infra\exception\UserException;
 
 class AuthController extends Controller
@@ -56,8 +57,17 @@ class AuthController extends Controller
     public function apiLogin()
     {
         try {
-            var_dump( $_SERVER['HTTP_USER_AGENT'], $this->getClientIp());
-            echo ['teste' => '1'];
+            $password = $this->getPost('password');
+            $email = new Email(email: $this->getPost('user'));
+
+            $user = (new User(new UserDb))
+                ->setEmail($email)
+                ->loadByEmail()
+                ->checkPassword($password)
+            ;
+
+            $_SESSION[LOGGED] = $user;
+            redirect('/');
         } catch(UserException $e) {
             $message = ErrorCodes::translate($e);
 

@@ -11,10 +11,12 @@ class ErrorCodes
 
     public const USER_PASSWORD_OR_LOGIN_INCORRECT = 4000;
     public const USER_CPF_INVALID = 4001;
+    public const USER_EMAIL_INVALID = 4002;
 
     public const TRANSLATIONS_PT_BR = [ 
         self::USER_PASSWORD_OR_LOGIN_INCORRECT => 'Usuário ou senha incorreto.',
         self::USER_CPF_INVALID => 'CPF inválido',
+        self::USER_EMAIL_INVALID => 'Email inválido'
     ];
 
     public const TRANSLATIONS = [
