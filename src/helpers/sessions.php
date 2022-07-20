@@ -18,7 +18,6 @@ function requireUserBySession() {
 
 function validateSession($session) {
     if(!$session) {
-        var_dump($_SESSION);die;
         redirect('/login');
     }
 }
