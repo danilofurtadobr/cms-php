@@ -11,6 +11,8 @@ class Email
 
     public function __construct(string $email)
     {
+        var_dump('passou');die;
+
         $this->email = $email;
         $this->validate();
         $this->load();

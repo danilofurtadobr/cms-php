@@ -69,10 +69,14 @@ class AuthController extends Controller
             $_SESSION[LOGGED] = $user;
             redirect('/');
         } catch(UserException $e) {
+            var_dump('passou');die;
+
             $message = ErrorCodes::translate($e);
 
             setExceptionMessageAndRedirect('message', $message, '/');
         } catch(\Exception $e) {
+            var_dump('passou');die;
+
             setExceptionMessageAndRedirect('message', ErrorCodes::ERROR_500, '/');
         }
     } 
