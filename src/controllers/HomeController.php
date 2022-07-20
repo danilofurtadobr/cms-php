@@ -14,6 +14,7 @@ class HomeController
 
     public function login()
     {
+        var_dump('chegou no login');die;
         return ['view' => 'login'];
     }
 }
