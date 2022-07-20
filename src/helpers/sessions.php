@@ -11,7 +11,7 @@ function logged() {
 }
 
 function requireUserBySession() {
-    $session = $_SESSION[LOGGED];
+    $session = $_SESSION[LOGGED] ?? null;
     validateSession($session);
     return $session;
 }
