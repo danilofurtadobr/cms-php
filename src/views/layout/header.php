@@ -24,11 +24,8 @@
         <div class="spacer"></div>
         <div class="dropdown">
             <div class="dropdown-button">
-
                 <span class="ml-3">
-                    <?php if ($_SESSION['user']): ?>
-                        <?= $_SESSION['user']->name ?>
-                    <?php endif; ?>
+                    <?= $_SESSION['user']->name ?>
                 </span>
                 <i class="icofont-simple-down mx-2"></i>
             </div>

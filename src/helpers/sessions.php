@@ -17,7 +17,7 @@ function requireUserBySession() {
 }
 
 function validateSession($session) {
-    if(!isset($session)) {
+    if(!$session) {
         redirect('/login');
     }
 }
