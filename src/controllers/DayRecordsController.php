@@ -10,6 +10,7 @@ class DayRecordsController
     public function index($params)
     {
         try {
+            var_dump('cheegou no index');die;
             $user = requireUserBySession();
             return [
                 'view' => 'day_records/index',
