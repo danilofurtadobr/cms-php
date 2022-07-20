@@ -17,8 +17,8 @@ function requireUserBySession() {
 }
 
 function validateSession($session) {
-    var_dump('chegou no redirect');die;
     if(!$session) {
+        var_dump('chegou no redirect do login');die;
         redirect('/login');
     }
 }
