@@ -11,7 +11,7 @@ use src\infra\exception\UserException;
 
 class AuthController extends Controller
 {
-    public function login()
+    public function loginValidate()
     {
         try {
             $cpfNumber = $this->getPost('user');
