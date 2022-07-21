@@ -18,6 +18,6 @@ function requireUserBySession() {
 
 function validateSession($session) {
     if(!$session) {
-        redirect('/login');
+        header('Location: /login');
     }
 }
