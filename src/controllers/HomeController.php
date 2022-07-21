@@ -12,7 +12,7 @@ class HomeController
         ];
     }
 
-    public function login()
+    public function loginValidate()
     {
         var_dump('chegou no login');die;
         return ['view' => 'login'];
