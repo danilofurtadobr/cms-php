@@ -11,7 +11,7 @@ return [
         '/user/[0-9]+/name/[a-z]+' => 'UserController@show',
     ],
     'POST' => [
-        '/loginValidate' => 'AuthController@login',
+        '/login' => 'AuthController@login',
         // '/api/login' => 'AuthController@apiLogin',
     ],
 ];
