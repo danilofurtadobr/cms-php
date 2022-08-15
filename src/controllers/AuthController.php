@@ -14,7 +14,6 @@ class AuthController extends Controller
     public function login()
     {
         try {
-            var_dump('Tentou validar login antes de colocar os dados');die;
             $cpfNumber = $this->getPost('user');
             $password = $this->getPost('password');
 
